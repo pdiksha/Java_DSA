@@ -128,6 +128,37 @@ public class LearnTree {
 
     }
 
+    //approach 2 of calculating diameter with linear time complexity
+    static class TreeInfo{
+        int ht;
+        int diam;
+        TreeInfo(int ht, int diam){
+            this.ht = ht;
+            this.diam = diam;
+        }
+    }
+
+    public static TreeInfo diameter2(Node root){
+
+        if(root==null){
+            return new TreeInfo(0,0);
+        }
+
+
+        TreeInfo left = diameter2(root.left);
+        TreeInfo right = diameter2(root.right);
+
+        int myHeight = Math.max(left.ht, right.ht)+1;
+        int diam1 = left.diam;
+        int diam2 = right.diam;
+        int diam3 = left.ht +right.ht+1;
+
+        int mydiam = Math.max(diam3, Math.max(diam1, diam2));
+
+        TreeInfo myInfo = new TreeInfo(myHeight, mydiam);
+        return myInfo;
+    }
+
 
 
 
@@ -155,6 +186,8 @@ public class LearnTree {
         System.out.println(height(root));
 
         System.out.println(diameter(root));
+
+        System.out.println(diameter2(root).diam);
 
 
 
