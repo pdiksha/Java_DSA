@@ -18,5 +18,8 @@ public class TestDemo {
         list1.add(list2);
         System.out.println(list1);
 
+        StringBuilder s = new StringBuilder();
+
+
     }
 }
