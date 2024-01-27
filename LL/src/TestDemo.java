@@ -1,25 +1,28 @@
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+ class singletons {
+
+  public String s = null;
+  private static singletons single_instance=null;
+
+  private singletons(){ this.s = "singleton class";}
+
+  public static singletons getInstance(){
+      if(single_instance==null){
+          single_instance = new singletons();
+      }
+      return single_instance;
+  }
+
+}
+
+
 public class TestDemo {
-
     public static void main(String[] args) {
-        List<List<Integer>> list1 = new ArrayList<>();
 
-        List<Integer> list = new ArrayList<>();
-        List<Integer> list2 = new ArrayList<>();
-
-        list.add(1);
-        list.add(2);
-        list1.add(list);
-
-        list2.add(3);
-        list2.add(4);
-        list1.add(list2);
-        System.out.println(list1);
-
-        StringBuilder s = new StringBuilder();
-
+    singletons x = singletons.getInstance();
 
     }
 }
