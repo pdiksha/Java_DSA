@@ -38,7 +38,7 @@ public class SingletonClass {
         System.out.println("Hash code of z : " + z.hashCode());
         System.out.println(x.s);
         y.s="pathak";
-        System.out.println(y.s);
+        System.out.println(x.s);
 
         if(x==y && y==z)
         {

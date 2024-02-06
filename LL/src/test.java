@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 public class test {
 
     public static void main(String[] args) {
+
+        String s1="Hello";
         List<Integer> list = new ArrayList<>();
         list = Arrays.asList(10,15,8,49,25,98,98,32,15);
         Set<Integer> set = new HashSet<>();
@@ -27,11 +29,8 @@ public class test {
         List<String> stringList = Arrays.asList("Diksha","Doll","Pathak","Hello");
         List<String> tempList = stringList.stream().filter(s-> s.startsWith("D")).collect(Collectors.toList());
 
-
         System.out.println(tempList);
         System.out.println(stringList.stream().sorted().collect(Collectors.toList()));
-
-
 
     }
 }

@@ -12,19 +12,20 @@ public class LearnTree {
         }
     }
 
-    static class BinaryTree{
-        static int idx = -1;
+   static class BinaryTree{
+        static int index=-1;
         public static Node buildTree(int[] nodes){
-            idx++;
-            if(nodes[idx]==-1){
+            index++;
+            if(nodes[index]==-1){
                 return null;
             }
-            Node newNode = new Node(nodes[idx]);
-            newNode.left = buildTree(nodes);
-            newNode.right = buildTree(nodes);
+
+            Node newNode = new Node(nodes[index]);
+            newNode.left=buildTree(nodes);
+            newNode.right=buildTree(nodes);
             return newNode;
         }
-    }
+   }
     //inorder/postorder/preorder - O(n) time complexity
 
     public static void preorder(Node root){
